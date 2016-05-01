@@ -25,9 +25,10 @@ Swift is given some opportunity to improve on this since it doesn't have to be s
 The result may look complex (as all functions-in-function-declarations do) but is really simple. It's just a function definition that takes a function as an argument so as long as you understand nesting this should quickly become clear:
 
 {{< highlight swift >}}
-func hardProcessingWithString(input: String, completion: (result: String) -> Void) {
+func hardProcessingWithString(input: String, completion: (String) -> Void) {
 	...
-	completion("we finished!")
+    // We finished!
+	completion(input)
 }
 {{< /highlight >}}
 
